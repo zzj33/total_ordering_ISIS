@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+message Msg {
+  msg_type type = 1;           // UNORDERED or ORDERING or ORDERED
+  int32 priority = 2;          // proposed priority
+  int32 node_id = 3;           // processor's id, unordered msg's [priority, node_id] is the transaction's id
+  Transaction transaction = 4; // only unordered type needs this
+  TransID trans_id = 5;        // only ORDERING and ORDERED type need this, to indicate order which transaction
+}
+
+enum msg_type {
+  UNORDERED = 0;
+  ORDERING = 1;
+  ORDERED = 2;
+}
+
+message TransID {
+  int32 ori_priority = 1;    //combine to form transaction's id
+  int32 ori_node_id = 2;
+}
+
+message Transaction {
+  transaction_type type = 1;  // DEPOSIT or TRANSFER
+  string from_whom = 2;       // TRANSFER from whom, if transaction_type is DEPOSIT, ignore this
+  string to_whom = 3;         // money to whom
+  int32 amount = 4;           // transaction's amount
+}
+
+enum transaction_type {
+  DEPOSIT = 0;
+  TRANSFER = 1;
+}

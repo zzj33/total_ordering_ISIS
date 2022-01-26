@@ -1,0 +1,8 @@
+7
+node1 fa21-cs425-g40-01.cs.illinois.edu 1234
+node2 fa21-cs425-g40-02.cs.illinois.edu 1234
+node3 fa21-cs425-g40-03.cs.illinois.edu 1234
+node4 fa21-cs425-g40-04.cs.illinois.edu 1234
+node5 fa21-cs425-g40-05.cs.illinois.edu 1234
+node6 fa21-cs425-g40-06.cs.illinois.edu 1234
+node8 fa21-cs425-g40-08.cs.illinois.edu 1234
